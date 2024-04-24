@@ -1,0 +1,10 @@
+<!-- templates/admin_app/add_android_app.html -->
+{% extends 'gradesApp/base1.html' %}
+{% block body_block %}
+  <h2>Add Android App</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+{% endblock %}

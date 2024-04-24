@@ -1,0 +1,20 @@
+<!-- templates/user_app/app_list.html -->
+{% extends 'gradesApp/base.html' %}
+{% block body_block %}
+  <h2>Android Apps and Points</h2>
+  <ul>
+    {% for app in apps %}
+      <li>{{ app.Appname }} - {{ app.Applink }} points</li>
+      <li>{{ app.App_category }} - {{ app.Applink }} points</li>
+      <li>{{ app.Appname }} - {{ app.Applink }} points</li>
+
+      Appname = models.CharField(max_length=100)
+    Applink = models.URLField()
+    App_category = models.CharField(max_length=50, choices=APP_CATEGORIES, default='category1')
+    Sub_category = models.CharField(max_length=50, choices=SUB_CATEGORIES, default='sub_category1')
+    App_img = models.ImageField(upload_to='App_img/')
+    points = models.PositiveIntegerField()
+
+    {% endfor %}
+  </ul>
+{% endblock %}

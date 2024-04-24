@@ -1,0 +1,35 @@
+<!-- templates/admin_app/add_android_app.html -->
+{% extends 'gradesApp/base1.html' %}
+{% block body_block %}
+
+<style>
+    /* Style for the h2 heading */
+h2 {
+  font-size: 24px; /* Adjust the font size as needed */
+  color: #333; /* Adjust the text color as needed */
+  margin-bottom: 20px; /* Add some space below the heading */
+}
+
+/* Style for the button */
+button {
+  padding: 10px 20px; /* Adjust the padding as needed */
+  background-color: #007bff; /* Change the background color */
+  color: #fff; /* Change the text color */
+  border: none; /* Remove the border */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer; /* Change the cursor to indicate interactivity */
+}
+
+/* Optional: Hover effect for the button */
+button:hover {
+  background-color: #0056b3; /* Change the background color on hover */
+}
+
+</style>
+  <h2>Add Android App</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+{% endblock %}

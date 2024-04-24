@@ -1,0 +1,19 @@
+<!-- app_detail.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Android App Detail</title>
+</head>
+<body>
+    <h1>Android App Detail</h1>
+    <strong>Name:</strong> {{ app.Appname }} <br>
+    <strong>Link:</strong> <a href="{{ app.Applink }}" target="_blank">{{ app.Applink }}</a> <br>
+    <strong>Category:</strong> {{ app.get_App_category_display }} <br>
+    <strong>Sub Category:</strong> {{ app.get_Sub_category_display }} <br>
+    {% if app.App_img %}
+        <img src="{{ app.App_img.url }}" alt="App Image" width="100">
+    {% endif %}
+    <strong>Points:</strong> {{ app.points }} <br>
+</body>
+</html>

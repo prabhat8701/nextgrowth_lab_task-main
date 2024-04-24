@@ -1,0 +1,11 @@
+<!-- templates/user_app/app_list.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Android Apps and Points</h2>
+  <ul>
+    {% for app in apps %}
+      <li>{{ app.name }} - {{ app.points }} points</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
